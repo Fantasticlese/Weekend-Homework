@@ -1,0 +1,15 @@
+<h1>Blogs</h1>
+
+ 
+<a href="blogs/new">Create New Item</a>`
+
+<% @blogs.each do |blog_item| %>
+  <p><%= blog_item.title %></p>
+  <p><%= blog_item.author %></p>
+  <p><%= blog_item.body %></p>
+  <%= link_to 'Delete Blog Item', blog_path(blog_item), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br>
+
+<%= link_to 'New Blog', new_blog_path %>
